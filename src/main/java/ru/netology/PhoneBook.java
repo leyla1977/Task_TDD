@@ -23,9 +23,10 @@ public class PhoneBook {
         return numberToName.get(number);
     }
 
-    // Заглушка findByName
+    //   findByName
     public String findByName(String name) {
-        return null;
+        return nameToNumber.get(name);
     }
+
 
 }
