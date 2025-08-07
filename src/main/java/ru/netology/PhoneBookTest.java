@@ -42,4 +42,24 @@ public class PhoneBookTest {
 
         assertNull(result);
     }
+    //тесты findByName
+
+    @Test
+    void testFindByNameExisting() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Alice", "9101234567");
+
+        String result = phoneBook.findByName("Alice");
+
+        assertEquals("9101234567", result); // должен вернуть номер
+    }
+
+    @Test
+    void testFindByNameNonExisting() {
+        PhoneBook phoneBook = new PhoneBook();
+
+        String result = phoneBook.findByName("Bob");
+
+        assertNull(result); // имени нет — возвращает null
+    }
 }
