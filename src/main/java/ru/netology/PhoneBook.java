@@ -28,5 +28,9 @@ public class PhoneBook {
         return nameToNumber.get(name);
     }
 
+    // Заглушка printAllNames
+    public String printAllNames() {
+        return null;
+    }
 
 }

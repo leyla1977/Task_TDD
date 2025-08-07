@@ -42,6 +42,7 @@ public class PhoneBookTest {
 
         assertNull(result);
     }
+
     //тесты findByName
 
     @Test
@@ -61,5 +62,23 @@ public class PhoneBookTest {
         String result = phoneBook.findByName("Bob");
 
         assertNull(result); // имени нет — возвращает null
+    }
+
+    //тесты printAllNames
+    @Test
+    void testPrintAllNamesEmpty() {
+        PhoneBook phoneBook = new PhoneBook();
+        assertEquals("", phoneBook.printAllNames());
+    }
+
+    @Test
+    void testPrintAllNamesMultiple() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Bob", "9259876543");
+        phoneBook.add("Alice", "9101234567");
+        phoneBook.add("Michael", "9101267450");
+
+        String expected = "Alice\nBob\nMichael\n"; // ожидаем имена в алфавитном порядке, по строкам
+        assertEquals(expected, phoneBook.printAllNames());
     }
 }
