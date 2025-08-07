@@ -6,8 +6,12 @@ import java.util.Map;
 public class PhoneBook {
     private Map<String, String> contacts = new HashMap<>();
 
-    // Заглушка add
+    // add
     public int add(String name, String number) {
-        return 0;
+        // Добавляем только если имя не существует
+        if (!contacts.containsKey(name)) {
+            contacts.put(name, number);
+        }
+        return contacts.size();
     }
 }
