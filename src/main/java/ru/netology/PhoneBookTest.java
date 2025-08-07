@@ -79,6 +79,8 @@ public class PhoneBookTest {
         phoneBook.add("Michael", "9101267450");
 
         String expected = "Alice\nBob\nMichael\n"; // ожидаем имена в алфавитном порядке, по строкам
-        assertEquals(expected, phoneBook.printAllNames());
+        String result = phoneBook.printAllNames();
+
+        assertEquals(expected, result);
     }
 }

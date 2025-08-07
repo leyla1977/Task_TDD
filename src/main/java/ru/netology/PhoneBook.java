@@ -1,13 +1,14 @@
 package ru.netology;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class PhoneBook {
-    //2 мапы - имя по номеру и номер по имени
-    Map<String, String> nameToNumber = new HashMap<>();
-    Map<String, String> numberToName = new HashMap<>();
 
+    // мапу Map<String, String> nameToNumber = new HashMap<>(); меняю на
+    // private Map<String, String> nameToNumber = new TreeMap<>();
+    // так как TreeMap хранит данные в алфавитном порядке.
+    Map<String, String> numberToName = new HashMap<>();
+    private Map<String, String> nameToNumber = new TreeMap<>();
     // add измененный
     public int add(String name, String number) {
         if (!nameToNumber.containsKey(name)) {
@@ -28,9 +29,9 @@ public class PhoneBook {
         return nameToNumber.get(name);
     }
 
-    // Заглушка printAllNames
+    //  printAllNames
     public String printAllNames() {
-        return null;
+        return String.join("\n", nameToNumber.keySet()) + "\n";
     }
 
 }
