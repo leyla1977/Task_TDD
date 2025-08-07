@@ -4,14 +4,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PhoneBook {
-    private Map<String, String> contacts = new HashMap<>();
+    //2 мапы - имя по номеру и номер по имени
+    Map<String, String> nameToNumber = new HashMap<>();
+    Map<String, String> numberToName = new HashMap<>();
 
-    // add
+    // add измененный
     public int add(String name, String number) {
-        // Добавляем только если имя не существует
-        if (!contacts.containsKey(name)) {
-            contacts.put(name, number);
+        if (!nameToNumber.containsKey(name)) {
+            nameToNumber.put(name, number);
+            numberToName.put(number, name);
         }
-        return contacts.size();
+        return nameToNumber.size();
+    }
+
+
+    // Заглушка метода findByNumber
+    public String findByNumber(String number) {
+        return null;
     }
 }
