@@ -18,8 +18,8 @@ public class PhoneBook {
     }
 
 
-    // Заглушка метода findByNumber
+    //  findByNumber
     public String findByNumber(String number) {
-        return null;
+        return numberToName.get(number);
     }
 }
