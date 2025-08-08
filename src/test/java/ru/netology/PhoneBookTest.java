@@ -2,6 +2,9 @@ package ru.netology;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
@@ -74,13 +77,21 @@ public class PhoneBookTest {
     @Test
     void testPrintAllNamesMultiple() {
         PhoneBook phoneBook = new PhoneBook();
-        phoneBook.add("Bob", "9259876543");
+        phoneBook.add("Michael", "9101256347");
         phoneBook.add("Alice", "9101234567");
-        phoneBook.add("Michael", "9101267450");
+        phoneBook.add("Bob", "9259876543");
 
-        String expected = "Alice\nBob\nMichael\n"; // ожидаем имена в алфавитном порядке, по строкам
+        // Ожидаемый список имён
+        List<String> expectedNames = List.of("Alice", "Bob", "Michael");
+
+        // Полученные имена из метода
         String result = phoneBook.printAllNames();
 
-        assertEquals(expected, result);
+        // Преобразуем строку обратно в список
+        List<String> actualNames = Arrays.asList(result.strip().split("\\R")); // \\R — любой перенос строки
+
+        assertEquals(expectedNames, actualNames);
     }
+
+
 }

@@ -31,7 +31,8 @@ public class PhoneBook {
 
     //  printAllNames
     public String printAllNames() {
-        return String.join("\n", nameToNumber.keySet()) + "\n";
+        return String.join("\n", nameToNumber.keySet());
     }
+
 
 }
